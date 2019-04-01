@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+## QbitWiki
 
-You can use the [editor on GitHub](https://github.com/qbituniverse/qbitwiki/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### Commands
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Set of useful commands:
 
-### Markdown
+-   [Azure](https://github.com/qbituniverse/qbitwiki/blob/master/commands/azure-commands.md)
+-   [Docker](https://github.com/qbituniverse/qbitwiki/blob/master/commands/docker-commands.md)
+-   [Helm](https://github.com/qbituniverse/qbitwiki/blob/master/commands/helm-commands.md)
+-   [Kubernetes](https://github.com/qbituniverse/qbitwiki/blob/master/commands/kubernetes-commands.md)
+-   [Mongo](https://github.com/qbituniverse/qbitwiki/blob/master/commands/mongo-commands.md)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Scripts
 
-```markdown
-Syntax highlighted code block
+-   [Powershell](https://github.com/qbituniverse/qbitwiki/tree/master/scripts/powershell)
 
-# Header 1
-## Header 2
-### Header 3
+### Templates
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/qbituniverse/qbitwiki/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+-   [ARM](https://github.com/qbituniverse/qbitwiki/tree/master/templates/arm)
