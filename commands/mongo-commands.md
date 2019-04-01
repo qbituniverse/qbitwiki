@@ -26,8 +26,10 @@ show collections
 ## records
 ### insert
 db.[COLLECTION NAME].insert({item: "one", value: 1})
+
 db.[COLLECTION NAME].insert({item: "one", value: 1, created: new Date()})
 
 ### select
 db.[COLLECTION NAME].find()
+
 db.[COLLECTION NAME].find().pretty()

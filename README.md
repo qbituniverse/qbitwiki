@@ -2,8 +2,6 @@
 
 ### Commands
 
-Set of useful commands:
-
 -   [Azure](https://github.com/qbituniverse/qbitwiki/blob/master/commands/azure-commands.md)
 -   [Docker](https://github.com/qbituniverse/qbitwiki/blob/master/commands/docker-commands.md)
 -   [Helm](https://github.com/qbituniverse/qbitwiki/blob/master/commands/helm-commands.md)

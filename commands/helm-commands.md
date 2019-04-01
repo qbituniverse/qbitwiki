@@ -6,7 +6,9 @@ helm init
 ## Release
 ### install/upgrade
 helm install -f [VALUES FILE].yaml .
+
 helm upgrade --install --recreate-pods --reset-values --force --wait [RELEASE NAME] [ACR/CHART]
+
 helm upgrade --install --recreate-pods --reset-values --force --values [VALUES FILE].yaml --wait [RELEASE NAME] .
 
 ### delete
@@ -17,6 +19,7 @@ helm history [RELEASE NAME]
 
 ## Stable Repo Operations
 helm repo add stable [STABLE NAME]
+
 helm search stable
 
 ## Azure Repo Operations

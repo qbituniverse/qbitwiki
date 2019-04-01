@@ -2,8 +2,11 @@
 
 ## Pod
 kubectl create -f [FILE NAME].yaml
+
 kubectl get pods
+
 kubectl describe pods
+
 kubectl delete pods [POD NAME]
 
 ## Replication Controller
@@ -12,8 +15,11 @@ kubectl create -f [FILE NAME].yaml
 
 ### update
 kubectl apply -f [FILE NAME].yaml
+
 kubectl get rc
+
 kubectl describe rc [RC NAME]
+
 kubectl delete rc [RC NAME]
 
 ## Service
@@ -22,9 +28,13 @@ kubectl expose rc [RC NAME] --name=[SVC NAME] --target-port=[PORT] --type=NodePo
 
 ### declarative
 kubectl create -f [RC NAME].yaml
+
 kubectl get svc
+
 kubectl describe svc [SVC NAME]
+
 kubectl delete svc [SVC NAME]
+
 kubectl get ep
 
 ### watch
@@ -36,23 +46,29 @@ kubectl create -f [RC NAME].yaml
 
 ### update
 kubectl apply -f [RC NAME].yaml --record
+
 kubectl rollout status deployment [DEPLOYMENT NAME]
+
 kubectl rollout history deployment [DEPLOYMENT NAME]
 
 ### rollback
 kubectl rollout undo deployment [DEPLOYMENT NAME] --to-revision=1
 
 kubectl get deploy
+
 kubectl describe deploy [DEPLOYMENT NAME]
+
 kubectl delete deploy [DEPLOYMENT NAME]
 
 ## Replica Sets
 kubectl get rs
+
 kubectl describe rs
 
 ## Processes
 ### k8s context
 kubectl config get-contexts
+
 kubectl config use-context [CONTEXT NAME]
 
 ### authenticate with secret
@@ -63,10 +79,13 @@ kubectl get services kube-dns --namespace=[NAMESPACE NAME]
 
 ## bash into the kube
 kubectl run curl --image=[IMAGE NAME]:curl -i --tty
+
 kubectl run curl -i --tty
 
 kubectl get pods -o wide
+
 kubectl get svc -o wide
+
 kubectl get deployments -o wide
 
 ## Lifecycle
@@ -75,11 +94,14 @@ kubectl get deployments -o wide
 - creates Replica Set
 - creates Pods
 - creates Service
+
 kubectl apply -f [FILE NAME].yaml
 
 ### update
 kubectl apply -f [FILE NAME].yaml --record
+
 kubectl rollout status deployment [DEPLOYMENT NAME]
+
 kubectl rollout history deployment [DEPLOYMENT NAME]
 
 ### roll back
@@ -87,11 +109,13 @@ kubectl rollout undo deployment [DEPLOYMENT NAME] --to-revision=1
 
 ### un-deployment
 - deletes Service
+
 kubectl delete svc [SVC NAME]
 
 - deletes Pods
 - deletes Replica Set
 - deletes Deployment
+
 kubectl delete deploy [DEPLOYMENT NAME]
 
 ## Azure Operations
