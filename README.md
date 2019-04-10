@@ -4,12 +4,12 @@ Guides, commands, scripts, templates, cheatsheets - Azure, Docker, Helm, Kuberne
 
 ### Commands
 
--   [Azure](https://github.com/qbituniverse/qbitwiki/blob/master/commands/azure-commands.md)
--   [Docker](https://github.com/qbituniverse/qbitwiki/blob/master/commands/docker-commands.md)
--   [Helm](https://github.com/qbituniverse/qbitwiki/blob/master/commands/helm-commands.md)
--   [Kubernetes](https://github.com/qbituniverse/qbitwiki/blob/master/commands/kubernetes-commands.md)
--   [Kubernetes Cluster](https://github.com/qbituniverse/qbitwiki/blob/master/commands/kubernetes-commands.md)
--   [Mongo](https://github.com/qbituniverse/qbitwiki/blob/master/commands/mongo-commands.md)
+-   [Azure](https://github.com/qbituniverse/qbitwiki/blob/master/commands/azure.md)
+-   [Docker](https://github.com/qbituniverse/qbitwiki/blob/master/commands/docker.md)
+-   [Helm](https://github.com/qbituniverse/qbitwiki/blob/master/commands/helm.md)
+-   [Kubernetes](https://github.com/qbituniverse/qbitwiki/blob/master/commands/kubernetes.md)
+-   [Kubernetes Cluster](https://github.com/qbituniverse/qbitwiki/blob/master/commands/kubernetes-cluster.md)
+-   [Mongo](https://github.com/qbituniverse/qbitwiki/blob/master/commands/mongo.md)
 
 ### Scripts
 
