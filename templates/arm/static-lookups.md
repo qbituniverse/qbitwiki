@@ -1,4 +1,4 @@
-# Static ARM Lookups
+# ARM Static Lookups
 
 ### VM SKUs
 -   Standard_E2s_v3
