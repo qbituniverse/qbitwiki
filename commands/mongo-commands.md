@@ -1,35 +1,41 @@
 # Mongo Commands
-
-## get into the container
-docker exec -it [CONTAINER NAME] bash
-
-## get into the pod
-kubectl exec -it [POD NAME] -- /bin/bash
-
-## open MongoDb
+## System
+### Open
+```
 mongo
-
-## databases
-### list
+```
+## Satabases
+### List
+```
 show dbs
-
-### open
+```
+### Open
+```
 use [DB NAME]
-
-## collections
-### create
+```
+## Collections
+### Create
+```
 db.createCollection("[COLLECTION NAME]")
-
-### show
+```
+### Show
+```
 show collections
-
-## records
-### insert
+```
+## Records
+### Insert
+```
 db.[COLLECTION NAME].insert({item: "one", value: 1})
-
+```
+### Insert with date
+```
 db.[COLLECTION NAME].insert({item: "one", value: 1, created: new Date()})
-
-### select
+```
+### Select
+```
 db.[COLLECTION NAME].find()
-
+```
+### Select with nice output
+```
 db.[COLLECTION NAME].find().pretty()
+```

@@ -1,14 +1,18 @@
 # Azure Commands
-
 ## Authentication
-### login
+### Login (principal)
+```
 az login --service-principal -u [PRINCIPAL GUID] --password [PRINCIPAL KEY] --tenant [TENANT GUID]
-
-### show subscriptions
+```
+### Show subscriptions
+```
 az account list
-
-### current subscription
+```
+### Current subscription
+```
 az account show
-
-### set subscription
-az account set --subscription [SUBSCRIPTION NAME] or [GUID]
+```
+### Set subscription
+```
+az account set --subscription [SUBSCRIPTION NAME] or [GUID ID]
+```
