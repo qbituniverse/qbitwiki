@@ -2,7 +2,7 @@
 ## System
 ### Init
 ```
-helm init
+helm init --upgrade
 ```
 ## Release
 ### Values in Yaml
