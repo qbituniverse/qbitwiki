@@ -1,48 +1,69 @@
 # Helm Commands
-
-## Init
+## System
+### Init
+```
 helm init
-
+```
 ## Release
-### install/upgrade
+### Values in Yaml
+```
 helm install -f [VALUES FILE].yaml .
-
-helm upgrade --install --recreate-pods --reset-values --force --wait [RELEASE NAME] [ACR/CHART]
-
+```
+### Upgrade or Install
+```
+helm upgrade --install --recreate-pods --reset-values --force --wait [RELEASE NAME] [REPO OR CHART]
+```
+### Upgrade or Install with values in Yaml
+```
 helm upgrade --install --recreate-pods --reset-values --force --values [VALUES FILE].yaml --wait [RELEASE NAME] .
-
-### delete
+```
+### Delete
+```
 helm delete --purge [RELEASE NAME]
-
-### history
+```
+### History
+```
 helm history [RELEASE NAME]
-
-## Stable Repo Operations
+```
+## Stable Repositories
+### Add
+```
 helm repo add stable [STABLE NAME]
-
+```
+### Search
+```
 helm search stable
-
-## Azure Repo Operations
-### set ACR as default for the session
+```
+## Azure Repositories
+### Set default ACR
+```
 az configure --defaults acr=[ACR NAME]
-
-### list ACRs
+```
+### List ACRs
+```
 az acr list
-
-### refresh helm repos in ACR
+```
+### Refresh
+```
 az acr helm repo add
-
-### view repos in ACR
+```
+### Search
+```
 helm search [ACR NAME]
-
-### list repos in ACR
+```
+### List charts in ACR
+```
 az acr helm list
-
-### push helm to ACR
+```
+### Push chart to ACR
+```
 az acr helm push [CHART NAME]
-
-### inspect chart in ACR
+```
+### Inspect chart in ACR
+```
 az acr helm inspect [ACR NAME/CHART NAME]
-
-### delete repo from ACR
+```
+### Ddelete chart from ACR
+```
 az acr helm delete [CHART NAME] --version [CHART VERSION]
+```
