@@ -1,6 +1,6 @@
 ## QbitWiki
 
-Guides, commands, scripts, templates - Azure, Docker, Helm, Kubernetes, Mongo
+Guides, commands, scripts, templates, cheatsheets - Azure, Docker, Helm, Kubernetes, Mongo
 
 ### Commands
 
@@ -16,4 +16,6 @@ Guides, commands, scripts, templates - Azure, Docker, Helm, Kubernetes, Mongo
 
 ### Templates
 
--   [ARM](https://github.com/qbituniverse/qbitwiki/tree/master/templates/arm)
+-   [ARM Static Lookups](https://github.com/qbituniverse/qbitwiki/blob/master/templates/arm/static-lookups.md)
+
+-   [ARM JSON Templates](https://github.com/qbituniverse/qbitwiki/tree/master/templates/arm)
