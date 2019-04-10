@@ -8,6 +8,7 @@ Guides, commands, scripts, templates, cheatsheets - Azure, Docker, Helm, Kuberne
 -   [Docker](https://github.com/qbituniverse/qbitwiki/blob/master/commands/docker-commands.md)
 -   [Helm](https://github.com/qbituniverse/qbitwiki/blob/master/commands/helm-commands.md)
 -   [Kubernetes](https://github.com/qbituniverse/qbitwiki/blob/master/commands/kubernetes-commands.md)
+-   [Kubernetes Cluster](https://github.com/qbituniverse/qbitwiki/blob/master/commands/kubernetes-commands.md)
 -   [Mongo](https://github.com/qbituniverse/qbitwiki/blob/master/commands/mongo-commands.md)
 
 ### Scripts
