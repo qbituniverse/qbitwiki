@@ -1,7 +1,7 @@
 [CmdletBinding()]
 Param
 (
-	[Parameter(Position=0,Mandatory=$false,HelpMessage="Operation: --view | --dangling | --prune | --destroy")]
+	[Parameter(Position=0,Mandatory=$false,HelpMessage="Operation: --view | --pd | --pu | --pc | --pa")]
 	[string]$Operation
 )
 
@@ -11,10 +11,11 @@ If ($Operation -in "--help") {
 	Write-Host -ForegroundColor Green ""
 	Write-Host -ForegroundColor Green "	[operation]"
 	Write-Host -ForegroundColor Green ""
-	Write-Host -ForegroundColor Green "	--view			View all docker resources: all images, all containers, all volumes, dangling volumes, dangling images."
-	Write-Host -ForegroundColor Green "	--dangling		Destroy dangling resources: volumes, images."
-	Write-Host -ForegroundColor Green "	--prune			Clean up system of all unused images."
-	Write-Host -ForegroundColor Green "	--destroy		Destroy all resources: containers, volumes, images."
+	Write-Host -ForegroundColor Green "	--view			View all docker resources: system stats, all images, all containers, all volumes, dangling volumes, dangling images."
+	Write-Host -ForegroundColor Green "	--pd			Prune dangling volumes & images."
+	Write-Host -ForegroundColor Green "	--pu			Prune unused volumes & images."
+	Write-Host -ForegroundColor Green "	--pc			Prune containers."
+	Write-Host -ForegroundColor Green "	--pa			Prune entire system."
 	Write-Host -ForegroundColor Green ""
 	Write-Host -ForegroundColor Green ""
 	Write-Host -ForegroundColor Green "Usage:"
@@ -24,6 +25,13 @@ If ($Operation -in "--help") {
 }
 
 If ($Operation -in ("--view", "")) {
+	Write-Host -ForegroundColor Green "=========================================================="
+	Write-Host -ForegroundColor Green "System"
+	Write-Host -ForegroundColor Green "=========================================================="
+	
+	docker system df
+	
+	Write-Host ""
 	Write-Host -ForegroundColor Green "=========================================================="
 	Write-Host -ForegroundColor Green "All Images"
 	Write-Host -ForegroundColor Green "=========================================================="
@@ -59,7 +67,7 @@ If ($Operation -in ("--view", "")) {
 	docker volume ls -f dangling=true
 	
 	Write-Host ""
-} ElseIf ($Operation -eq "--dangling") {
+} ElseIf ($Operation -eq "--pd") {
 	Write-Host -ForegroundColor Red "=========================================================="
 	Write-Host -ForegroundColor Red "Removing Dangling Volumes"
 	Write-Host -ForegroundColor Red "=========================================================="
@@ -73,43 +81,56 @@ If ($Operation -in ("--view", "")) {
 	docker rmi -f $(docker images -qf dangling=true)
 
 	Write-Host ""
-} ElseIf ($Operation -eq "--prune") {
+} ElseIf ($Operation -eq "--pu") {
+	Write-Host -ForegroundColor Red "=========================================================="
+	Write-Host -ForegroundColor Red "Removing Unused Volumes"
+	Write-Host -ForegroundColor Red "=========================================================="
+	
+	docker volume prune -f
+
+	Write-Host ""
 	Write-Host -ForegroundColor Red "=========================================================="
 	Write-Host -ForegroundColor Red "Removing Unused Images"
 	Write-Host -ForegroundColor Red "=========================================================="
 	
-	docker system prune -af
+	docker image prune -af
 
 	Write-Host ""
-} ElseIf ($Operation -eq "--destroy") {
+} ElseIf ($Operation -eq "--pc") {
 	Write-Host -ForegroundColor Red "=========================================================="
 	Write-Host -ForegroundColor Red "Removing All Containers"
 	Write-Host -ForegroundColor Red "=========================================================="
 	
-	docker rm -f -v $(docker ps -aq)
+	docker rm -fv $(docker ps -aq)
+
+	Write-Host ""
+} ElseIf ($Operation -eq "--pa") {
+	Write-Host -ForegroundColor Red "=========================================================="
+	Write-Host -ForegroundColor Red "Removing All Containers"
+	Write-Host -ForegroundColor Red "=========================================================="
+	
+	docker rm -fv $(docker ps -aq)
 
 	Write-Host -ForegroundColor Red "=========================================================="
-	Write-Host -ForegroundColor Red "Removing Unused Images"
+	Write-Host -ForegroundColor Red "Removing All Images"
 	Write-Host -ForegroundColor Red "=========================================================="
 	
-	docker system prune -af
+	docker rmi $(docker images -qf dangling=true)
+	docker rmi $(docker images -q)
+	docker image prune -af
 
 	Write-Host -ForegroundColor Red "=========================================================="
-	Write-Host -ForegroundColor Red "Removing Dangling Volumes"
+	Write-Host -ForegroundColor Red "Removing All Volumes"
 	Write-Host -ForegroundColor Red "=========================================================="
 	
-	docker volume rm -f $(docker volume ls -qf dangling=true)
-	
-	Write-Host -ForegroundColor Red "=========================================================="
-	Write-Host -ForegroundColor Red "Removing Dangling Images"
-	Write-Host -ForegroundColor Red "=========================================================="
-	
-	docker rmi -f $(docker images -qf dangling=true)
+	docker volume rm (docker volume ls -qf dangling=true)
+	docker volume rm $(docker volume ls)
+	docker volume prune -f
 
 	Write-Host ""
 } Else {
 	Write-Host -ForegroundColor Red "=========================================================="
 	Write-Host -ForegroundColor Red "Wrong Operation Received"
-	Write-Host -ForegroundColor Red "Use: --view | --dangling | --prune | --destroy"
+	Write-Host -ForegroundColor Red "Use: --view | --pd | --pu | --pc | --pa"
 	Write-Host -ForegroundColor Red "=========================================================="
 }

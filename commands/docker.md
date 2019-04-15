@@ -12,9 +12,9 @@ docker info
 ```
 docker stats -a
 ```
-### Prune dangling images
+### System Components
 ```
-docker system prune -f
+docker system df
 ```
 ### Prune all unused and dangling images
 ```
@@ -50,13 +50,17 @@ docker images --all
 ```
 docker rmi [IMAGE NAME]:latest
 ```
-### Remove all
+### Remove unused
 ```
-docker rmi $(docker images -q)
+docker image prune -af
 ```
 ### Remove dangling
 ```
 docker rmi $(docker images -qf dangling=true)
+```
+### Remove all
+```
+docker rmi $(docker images -q)
 ```
 ## Containers
 ### List running
@@ -103,7 +107,7 @@ docker stop [CONTAINER NAME]
 ```
 docker stop $(docker ps -a -q)
 ```
-### Remove one
+### Remove
 ```
 docker rm [CONTAINER NAME]
 ```
@@ -114,6 +118,14 @@ docker rm $(docker ps -a -q)
 ### Remove all (force running ones)
 ```
 docker rm -f $(docker ps -aq)
+```
+### Remove all (force running ones plus volume)
+```
+docker rm -fv $(docker ps -aq)
+```
+### Logs
+```
+docker logs -f [CONTAINER NAME]
 ```
 ## Volumes
 ### List
@@ -128,13 +140,21 @@ docker volume create [VOLUME NAME]
 ```
 docker volume inspect [VOLUME NAME]
 ```
+### Remove
+```
+docker volume rm [VOLUME NAME]
+```
+### Remove unused
+```
+docker volume prune -f
+```
+### Remove dangling
+```
+docker volume rm (docker volume ls -qf dangling=true)
+```
 ### Remove active
 ```
 docker volume rm $(docker volume ls)
-```
-### Remove all and dangling
-```
-docker volume rm (docker volume ls -qf dangling=true)
 ```
 ## File Operations
 ### Copy to container or volume
