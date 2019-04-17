@@ -1,8 +1,8 @@
-## QbitWiki
-
+# QbitWiki
+## Description
 Guides, commands, scripts, templates, cheatsheets - Azure, Docker, Helm, Kubernetes, Mongo
 
-### Commands
+## Commands
 
 -   [Azure](https://github.com/qbituniverse/qbitwiki/blob/master/commands/azure.md)
 -   [Docker](https://github.com/qbituniverse/qbitwiki/blob/master/commands/docker.md)
@@ -11,12 +11,18 @@ Guides, commands, scripts, templates, cheatsheets - Azure, Docker, Helm, Kuberne
 -   [Kubernetes Cluster](https://github.com/qbituniverse/qbitwiki/blob/master/commands/kubernetes-cluster.md)
 -   [Mongo](https://github.com/qbituniverse/qbitwiki/blob/master/commands/mongo.md)
 
-### Scripts
+## Scripts
 
 -   [Powershell](https://github.com/qbituniverse/qbitwiki/tree/master/scripts/powershell)
 
-### Templates
+## Templates
 
 -   [ARM Static Lookups](https://github.com/qbituniverse/qbitwiki/blob/master/templates/arm/static-lookups.md)
-
 -   [ARM JSON Templates](https://github.com/qbituniverse/qbitwiki/tree/master/templates/arm)
+
+## Usage
+Run this image as follows to access its contents and copy them as desired. Image always has "latest" tag.
+
+```
+docker run -it --name qbitwiki qbituniverse/qbitwiki
+```
