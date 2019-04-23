@@ -161,3 +161,14 @@ docker volume rm $(docker volume ls)
 ```
 docker cp FILE [CONTAINER NAME]:/root/test.R
 ```
+## Docker Engine
+### Switch to Linux Mode
+```
+[Environment]::SetEnvironmentVariable("LCOW_SUPPORTED", "1", "Machine")
+Restart-Service *docker*
+```
+### Switch to Windows Mode
+```
+[Environment]::SetEnvironmentVariable("LCOW_SUPPORTED", $null, "Machine")
+Restart-Service *docker*
+```
