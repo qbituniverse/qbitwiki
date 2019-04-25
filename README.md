@@ -21,8 +21,20 @@ Guides, commands, scripts, templates, cheatsheets - Azure, Docker, Helm, Kuberne
 -   [ARM JSON Templates](https://github.com/qbituniverse/qbitwiki/tree/master/templates/arm)
 
 ## Usage
-Run this image as follows to access its contents and copy them as desired. Image always has "latest" tag.
+Open CMD, navigate to location where you need the "qbitwiki" folders copied and run the command below. Image always has "latest" tag.
 
 ```
-docker run -it --name qbitwiki qbituniverse/qbitwiki
+docker create --name qbitwiki qbituniverse/qbitwiki
+docker cp qbitwiki:qbitwiki qbitwiki
+docker rm -fv qbitwiki
+cls
 ```
+
+The end result will be created as follows:
+
+```
+|- qbitwiki
+   |- commands
+   |- scripts
+   |- templates
+ ```
