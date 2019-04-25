@@ -14,6 +14,7 @@ choco feature enable -n allowGlobalConfirmation
 
 # install dependencies
 choco install googlechrome --ignore-checksum
+choco install postman
 choco install sourcetree
 choco install git.install
 choco install git-lfs.install
