@@ -104,3 +104,16 @@ kubectl get rs
 ```
 kubectl describe rs
 ```
+## Ingress
+### Get
+```
+kubectl get ingress -n all-namespaces
+```
+### Info
+```
+kubectl describe ingress [INGRESS NAME] -n [NAMESPACE NAME]
+```
+### Delete
+```
+kubectl delete ingress [INGRESS NAME] -n [NAMESPACE NAME]
+```
