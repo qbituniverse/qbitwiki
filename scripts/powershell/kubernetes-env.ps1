@@ -37,39 +37,6 @@ If ($Operation -in ("--view", "--view-wide", "")) {
 	
 	Write-Host ""
 	Write-Host -ForegroundColor Green "=========================================================="
-	Write-Host -ForegroundColor Green "Ingress"
-	Write-Host -ForegroundColor Green "=========================================================="
-	
-	If ($Operation -in ("--view", "")) {
-		kubectl get ingress
-	} ElseIf ($Operation -eq "--view-wide") {
-		kubectl get ingress -o wide
-	}
-
-	Write-Host ""
-	Write-Host -ForegroundColor Green "=========================================================="
-	Write-Host -ForegroundColor Green "Certificates"
-	Write-Host -ForegroundColor Green "=========================================================="
-	
-	If ($Operation -in ("--view", "")) {
-		kubectl get certificates
-	} ElseIf ($Operation -eq "--view-wide") {
-		kubectl get certificates -o wide
-	}
-
-	Write-Host ""
-	Write-Host -ForegroundColor Green "=========================================================="
-	Write-Host -ForegroundColor Green "Cluster Issuers"
-	Write-Host -ForegroundColor Green "=========================================================="
-	
-	If ($Operation -in ("--view", "")) {
-		kubectl get clusterissuers
-	} ElseIf ($Operation -eq "--view-wide") {
-		kubectl get clusterissuers -o wide
-	}
-
-	Write-Host ""
-	Write-Host -ForegroundColor Green "=========================================================="
 	Write-Host -ForegroundColor Green "Namespaces"
 	Write-Host -ForegroundColor Green "=========================================================="
 	
@@ -78,13 +45,46 @@ If ($Operation -in ("--view", "--view-wide", "")) {
 	} ElseIf ($Operation -eq "--view-wide") {
 		kubectl get namespaces -o wide
 	}
-	
+
 	Write-Host ""
 	Write-Host -ForegroundColor Green "=========================================================="
 	Write-Host -ForegroundColor Green "Releases"
 	Write-Host -ForegroundColor Green "=========================================================="
 	
 	helm list
+
+	Write-Host ""
+	Write-Host -ForegroundColor Green "=========================================================="
+	Write-Host -ForegroundColor Green "Ingress"
+	Write-Host -ForegroundColor Green "=========================================================="
+	
+	If ($Operation -in ("--view", "")) {
+		kubectl get ingress --all-namespaces
+	} ElseIf ($Operation -eq "--view-wide") {
+		kubectl get ingress --all-namespaces -o wide
+	}
+
+	Write-Host ""
+	Write-Host -ForegroundColor Green "=========================================================="
+	Write-Host -ForegroundColor Green "Certificates"
+	Write-Host -ForegroundColor Green "=========================================================="
+	
+	If ($Operation -in ("--view", "")) {
+		kubectl get certificates --all-namespaces
+	} ElseIf ($Operation -eq "--view-wide") {
+		kubectl get certificates --all-namespaces -o wide
+	}
+
+	Write-Host ""
+	Write-Host -ForegroundColor Green "=========================================================="
+	Write-Host -ForegroundColor Green "Cluster Issuers"
+	Write-Host -ForegroundColor Green "=========================================================="
+	
+	If ($Operation -in ("--view", "")) {
+		kubectl get clusterissuers --all-namespaces
+	} ElseIf ($Operation -eq "--view-wide") {
+		kubectl get clusterissuers --all-namespaces -o wide
+	}
 
 	Write-Host ""
 	Write-Host -ForegroundColor Green "=========================================================="
