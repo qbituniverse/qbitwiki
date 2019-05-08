@@ -25,10 +25,9 @@ Open CMD, navigate to location where you need the "qbitwiki" folders copied and 
 
 ```
 docker create --name qbitwiki qbituniverse/qbitwiki
-docker cp qbitwiki:qbitwiki qbitwiki
+docker cp qbitwiki:/qbitwiki/. qbitwiki/
 docker rm -fv qbitwiki
 docker rmi -f qbituniverse/qbitwiki:latest
-cls
 ```
 
 Hit Enter on the last "cls" command. The end result will be a folder structure created as follows:
