@@ -1,7 +1,7 @@
 [CmdletBinding()]
 Param
 (
-	[Parameter(Position=0,Mandatory=$false,HelpMessage="Operation: --view | --pd | --pu | --pc | --pa")]
+	[Parameter(Position=0,Mandatory=$false,HelpMessage="Operation: --view | --reset | --pd | --pu | --pc | --pa")]
 	[string]$Operation
 )
 
@@ -12,6 +12,7 @@ If ($Operation -in "--help") {
 	Write-Host -ForegroundColor Green "	[operation]"
 	Write-Host -ForegroundColor Green ""
 	Write-Host -ForegroundColor Green "	--view			View all docker resources: system stats, all images, all containers, all volumes, dangling volumes, dangling images."
+	Write-Host -ForegroundColor Green "	--reset			Resets Docker networking adapter."
 	Write-Host -ForegroundColor Green "	--pd			Prune dangling volumes & images."
 	Write-Host -ForegroundColor Green "	--pu			Prune unused volumes & images."
 	Write-Host -ForegroundColor Green "	--pc			Prune containers."
@@ -66,6 +67,14 @@ If ($Operation -in ("--view", "")) {
 	
 	docker volume ls -f dangling=true
 	
+	Write-Host ""
+} ElseIf ($Operation -eq "--reset") {
+	Write-Host -ForegroundColor Red "=========================================================="
+	Write-Host -ForegroundColor Red "Resetting Docker Networking Adapter"
+	Write-Host -ForegroundColor Red "=========================================================="
+	
+	Set-NetConnectionProfile -interfacealias "vEthernet (DockerNAT)" -NetworkCategory Private
+
 	Write-Host ""
 } ElseIf ($Operation -eq "--pd") {
 	Write-Host -ForegroundColor Red "=========================================================="
@@ -131,6 +140,6 @@ If ($Operation -in ("--view", "")) {
 } Else {
 	Write-Host -ForegroundColor Red "=========================================================="
 	Write-Host -ForegroundColor Red "Wrong Operation Received"
-	Write-Host -ForegroundColor Red "Use: --view | --pd | --pu | --pc | --pa"
+	Write-Host -ForegroundColor Red "Use: --view | --reset | --pd | --pu | --pc | --pa"
 	Write-Host -ForegroundColor Red "=========================================================="
 }
