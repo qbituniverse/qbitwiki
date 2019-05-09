@@ -142,6 +142,17 @@ If ($Operation -in ("--view", "--view-wide", "")) {
 	}
 	
 	Write-Host ""
+	Write-Host -ForegroundColor Green "=========================================================="
+	Write-Host -ForegroundColor Green "Config Maps"
+	Write-Host -ForegroundColor Green "=========================================================="
+	
+	If ($Operation -in ("--view", "")) {
+		kubectl get configmaps --all-namespaces
+	} ElseIf ($Operation -eq "--view-wide") {
+		kubectl get configmaps --all-namespaces -o wide
+	}
+	
+	Write-Host ""
 } Else {
 	Write-Host -ForegroundColor Red "=========================================================="
 	Write-Host -ForegroundColor Red "Wrong Operation Received"
