@@ -1,7 +1,7 @@
 [CmdletBinding()]
 Param
 (
-	[Parameter(Position=0,Mandatory=$false,HelpMessage="Operation: --view | --view-wide")]
+	[Parameter(Position=0,Mandatory=$false,HelpMessage="Operation: --view | --view-wide | --reset")]
 	[string]$Operation
 )
 
@@ -11,8 +11,9 @@ If ($Operation -in "--help") {
 	Write-Host -ForegroundColor Green ""
 	Write-Host -ForegroundColor Green "	[operation]"
 	Write-Host -ForegroundColor Green ""
-	Write-Host -ForegroundColor Green "	--view			View all k8s resources: all contexts, all namespaces, all deployments, all replica sets, all services, all pods."
-	Write-Host -ForegroundColor Green "	--view-wide		View all k8s resources in wide view: all contexts, all namespaces, all deployments, all replica sets, all services, all pods."
+	Write-Host -ForegroundColor Green "	--view			View all k8s resources: all contexts, all namespaces, all deployments, all replica sets, all services, all pods, all config maps."
+	Write-Host -ForegroundColor Green "	--view-wide		View all k8s resources in wide view: all contexts, all namespaces, all deployments, all replica sets, all services, all pods, all config maps."
+	Write-Host -ForegroundColor Green "	--reset			Resets k8s cache by deleteing config file."
 	Write-Host -ForegroundColor Green ""
 	Write-Host -ForegroundColor Green ""
 	Write-Host -ForegroundColor Green "Usage:"
@@ -153,9 +154,17 @@ If ($Operation -in ("--view", "--view-wide", "")) {
 	}
 	
 	Write-Host ""
+} ElseIf ($Operation -eq "--reset") {
+	Write-Host -ForegroundColor Red "=========================================================="
+	Write-Host -ForegroundColor Red "Resetting k8s Cluster Cache"
+	Write-Host -ForegroundColor Red "=========================================================="
+	
+	Remove-Item -Path $home\.kube\config -Force
+
+	Write-Host ""
 } Else {
 	Write-Host -ForegroundColor Red "=========================================================="
 	Write-Host -ForegroundColor Red "Wrong Operation Received"
-	Write-Host -ForegroundColor Red "Use: --view | --view-wide"
+	Write-Host -ForegroundColor Red "Use: --view | --view-wide | --reset"
 	Write-Host -ForegroundColor Red "=========================================================="
 }
