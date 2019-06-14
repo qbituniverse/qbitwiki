@@ -12,6 +12,10 @@ kubectl get pods
 ```
 kubectl describe pods
 ```
+### Logs
+```
+kubectl logs [POD NAME] -n [NAMESPACE]
+```
 ### Exec
 ```
 kubectl exec -it [POD NAME] -n [NAMESPACE] /bin/bash
