@@ -71,6 +71,10 @@ docker ps
 ```
 docker ps -a
 ```
+### Inspect
+```
+docker inspect [CONTAINER NAME]
+```
 ### Create
 ```
 docker container create --name [CONTAINER NAME] -p [LOCAL PORT]:[CONTAINER PORT] -v [CONTAINER NAME]:/root [IMAGE NAME]:latest
@@ -155,6 +159,15 @@ docker volume rm (docker volume ls -qf dangling=true)
 ### Remove active
 ```
 docker volume rm $(docker volume ls)
+```
+## Compose
+### Up from File
+```
+docker-compose -f [FILE PATH to YAML] up
+```
+### Down from File
+```
+docker-compose -f [FILE PATH to YAML] down
 ```
 ## File Operations
 ### Copy to container or volume
