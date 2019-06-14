@@ -12,6 +12,10 @@ kubectl get pods
 ```
 kubectl describe pods
 ```
+### Exec
+```
+kubectl exec -it [POD NAME] -n [NAMESPACE] /bin/bash
+```
 ### Delete
 ```
 kubectl delete pods [POD NAME]
