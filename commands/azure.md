@@ -1,4 +1,5 @@
 # Azure Commands
+
 ## Authentication
 ### Login (principal)
 ```
