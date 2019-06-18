@@ -144,6 +144,17 @@ If ($Operation -in ("--view", "--view-wide", "")) {
 	
 	Write-Host ""
 	Write-Host -ForegroundColor Green "=========================================================="
+	Write-Host -ForegroundColor Green "Persistent Volume Claims"
+	Write-Host -ForegroundColor Green "=========================================================="
+	
+	If ($Operation -in ("--view", "")) {
+		kubectl get pvc --all-namespaces
+	} ElseIf ($Operation -eq "--view-wide") {
+		kubectl get pvc --all-namespaces -o wide
+	}
+	
+	Write-Host ""
+	Write-Host -ForegroundColor Green "=========================================================="
 	Write-Host -ForegroundColor Green "Config Maps"
 	Write-Host -ForegroundColor Green "=========================================================="
 	
@@ -151,6 +162,18 @@ If ($Operation -in ("--view", "--view-wide", "")) {
 		kubectl get configmaps --all-namespaces
 	} ElseIf ($Operation -eq "--view-wide") {
 		kubectl get configmaps --all-namespaces -o wide
+	}
+	
+	Write-Host ""
+	
+	Write-Host -ForegroundColor Green "=========================================================="
+	Write-Host -ForegroundColor Green "Secrets"
+	Write-Host -ForegroundColor Green "=========================================================="
+	
+	If ($Operation -in ("--view", "")) {
+		kubectl get secrets --all-namespaces
+	} ElseIf ($Operation -eq "--view-wide") {
+		kubectl get secrets --all-namespaces -o wide
 	}
 	
 	Write-Host ""
