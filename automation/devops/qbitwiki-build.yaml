@@ -1,13 +1,14 @@
-job: Image
-displayName: 'Package Docker Image'
-pool:
-  name: Hosted Ubuntu 1604
-steps:
-- task: Docker@2
-  displayName: buildAndPush
-  inputs:
-    containerRegistry: DockerHub
-    repository: qbituniverse/qbitwiki
-    Dockerfile: 'automation/docker/Dockerfile-qbitwiki'
-    buildContext: ''
-    tags: latest
+jobs: 
+- job: Image
+  displayName: 'Package Docker Image'
+  pool:
+    name: Hosted Ubuntu 1604
+  steps:
+  - task: Docker@2
+    displayName: buildAndPush
+    inputs:
+      containerRegistry: DockerHub
+      repository: qbituniverse/qbitwiki
+      Dockerfile: 'automation/docker/Dockerfile-qbitwiki'
+      buildContext: ''
+      tags: latest
