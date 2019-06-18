@@ -1,11 +1,8 @@
-# prepare Docker
-Uninstall-Package -Name docker -ProviderName DockerMSFTProvider -Force
-Install-Module DockerProvider -Force
-Install-Package Docker -ProviderName DockerProvider -RequiredVersion preview -Force
-
-# add Docker Compose
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-Windows-x86_64.exe" -UseBasicParsing -OutFile $Env:ProgramFiles\Docker\docker-compose.exe
+# clean up Docker
+Uninstall-Package -Name docker -ProviderName DockerMsftProvider
+Uninstall-Module -Name DockerMsftProvider
+Get-HNSNetwork | Remove-HNSNetwork
+Remove-Item -Path "C:\ProgramData\Docker" -Recurse -Force
 
 # install choco
 Set-ExecutionPolicy Bypass -Scope Process -Force
@@ -13,6 +10,8 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://cho
 choco feature enable -n allowGlobalConfirmation
 
 # install dependencies
+choco install docker-for-windows
+choco install docker-compose
 choco install googlechrome --ignore-checksum
 choco install postman
 choco install sourcetree
