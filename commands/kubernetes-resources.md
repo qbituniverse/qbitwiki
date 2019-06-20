@@ -1,4 +1,5 @@
-# Kubectl Commands
+# KUbernetes Resources
+
 ## Pod
 ### Create
 ```
@@ -24,6 +25,7 @@ kubectl exec -it [POD NAME] -n [NAMESPACE] /bin/bash
 ```
 kubectl delete pods [POD NAME]
 ```
+
 ## Replication Controller
 ### Create
 ```
@@ -45,6 +47,7 @@ kubectl describe rc [RC NAME]
 ```
 kubectl delete rc [RC NAME]
 ```
+
 ## Service
 ### Expose port
 ```
@@ -70,6 +73,7 @@ kubectl delete svc [SVC NAME]
 ```
 kubectl get service [SVC NAME] --watch
 ```
+
 ## Deployments
 ### Create
 ```
@@ -103,6 +107,7 @@ kubectl describe deploy [DEPLOYMENT NAME]
 ```
 kubectl delete deploy [DEPLOYMENT NAME]
 ```
+
 ## Replica Sets
 ### Get
 ```
@@ -112,6 +117,7 @@ kubectl get rs
 ```
 kubectl describe rs
 ```
+
 ## Ingress
 ### Get
 ```
@@ -125,6 +131,7 @@ kubectl describe ingress [INGRESS NAME] -n [NAMESPACE NAME]
 ```
 kubectl delete ingress [INGRESS NAME] -n [NAMESPACE NAME]
 ```
+
 ## Namespace
 ### Delete all resources
 ```
