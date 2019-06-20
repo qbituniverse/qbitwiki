@@ -1,4 +1,5 @@
 # Helm Commands
+
 ## System
 ### Init
 ```
@@ -8,10 +9,15 @@ helm init --upgrade
 ```
 helm search [ACR NAME]
 ```
-### Inspect checrt in local Helm
+### Inspect chart in local Helm
 ```
 helm inspect [ACR NAME]/[CHART NAME] --version [CHART VERSION]
 ```
+### Refresh charts from source
+```
+helm repo update
+```
+
 ## Release
 ### Values in Yaml
 ```
@@ -33,6 +39,7 @@ helm delete --purge [RELEASE NAME]
 ```
 helm history [RELEASE NAME]
 ```
+
 ## Stable Repositories
 ### Add
 ```
@@ -42,6 +49,7 @@ helm repo add stable [STABLE NAME]
 ```
 helm search stable
 ```
+
 ## Azure Repositories
 ### List ACRs
 ```
