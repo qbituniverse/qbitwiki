@@ -1,4 +1,4 @@
-# KUbernetes Resources
+# Kubernetes Resources
 
 ## Pod
 ### Create
