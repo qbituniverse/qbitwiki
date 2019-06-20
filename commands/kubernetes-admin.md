@@ -1,9 +1,12 @@
-# Kubernetes Cluster
+# Kubernetes Admin
+
 ## Authentication
+
 ### Seccret
 ```
 kubectl create secret docker-registry k8s-auth --docker-server [REPO NAME] --docker-username [USER NAME] --docker-password [PASS WORD] --docker-email sample@sample.com
 ```
+
 ### Login
 ```
 az login --service-principal -u [SP NAME] --password [SP PWD] --tenant [TENANT GUID]
@@ -16,6 +19,7 @@ az account list
 ```
 az account set --subscription [SUBS NAME]
 ```
+
 ## Cluster
 ### Access to cluster
 ```
@@ -34,6 +38,15 @@ kubectl config get-contexts
 ```
 kubectl config use-context [CONTEXT NAME]
 ```
+### Delete Context config
+```
+kubectl config delete-context [CONTEXT NAME]
+```
+### Delete Cluster config
+```
+kubectl config delete-cluster [CLUSTER NAME]
+```
+
 ## Helm
 ### Tiller setup
 ```
@@ -69,6 +82,7 @@ helm search stable
 ```
 helm history [RELEASE NAME]
 ```
+
 ## DNS
 ### Check
 ```
