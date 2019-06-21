@@ -66,3 +66,7 @@ kubectl run curl -i --tty
 ```
 kubectl get pods|svc|etc -o wide
 ```
+### Yaml output
+```
+kubectl get pods|svc|etc -o yaml
+```
