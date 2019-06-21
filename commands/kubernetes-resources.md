@@ -137,7 +137,11 @@ kubectl delete ingress [INGRESS NAME] -n [NAMESPACE NAME]
 ```
 
 ## Namespace
+### Get all resources per namespace
+```
+kubectl get all -n [NAMESPACE]
+```
 ### Delete all resources
 ```
-kubectl delete namespace --namespace=[NAMESPACE NAME] --all
+kubectl delete namespace -n [NAMESPACE] --all
 ```
