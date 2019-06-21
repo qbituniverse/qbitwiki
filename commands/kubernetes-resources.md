@@ -1,77 +1,17 @@
 # Kubernetes Resources
 
-## Pod
-### Create
+## Namespace
+### Show all Namespaces
 ```
-kubectl create -f [FILE NAME].yaml
+kubectl get namespaces
 ```
-### Get all
+### Get all resources per namespace
 ```
-kubectl get pods
+kubectl get all -n [NAMESPACE]
 ```
-### Info
+### Delete all resources
 ```
-kubectl describe pods
-```
-### Logs
-```
-kubectl logs [POD NAME] -n [NAMESPACE]
-```
-### Exec
-```
-kubectl exec -it [POD NAME] -n [NAMESPACE] /bin/bash
-```
-### Delete
-```
-kubectl delete pods [POD NAME]
-```
-
-## Replication Controller
-### Create
-```
-kubectl create -f [FILE NAME].yaml
-```
-### Update
-```
-kubectl apply -f [FILE NAME].yaml
-```
-### Get
-```
-kubectl get rc
-```
-### Info
-```
-kubectl describe rc [RC NAME]
-```
-### Delete
-```
-kubectl delete rc [RC NAME]
-```
-
-## Service
-### Expose port
-```
-kubectl expose rc [RC NAME] --name=[SVC NAME] --target-port=[PORT NUMBER] --type=NodePort
-```
-### Create
-```
-kubectl create -f [FILENAME].yaml
-```
-### Get
-```
-kubectl get svc
-```
-### Info
-```
-kubectl describe svc [SVC NAME]
-```
-### Delete
-```
-kubectl delete svc [SVC NAME]
-```
-### Watch
-```
-kubectl get service [SVC NAME] --watch
+kubectl delete namespace -n [NAMESPACE] --all
 ```
 
 ## Deployments
@@ -112,14 +52,56 @@ kubectl logs -f deploy/[DEPLOYMENT NAME] -n [NAMESPACE]
 kubectl delete deploy [DEPLOYMENT NAME]
 ```
 
-## Replica Sets
+## Service
+### Expose port
+```
+kubectl expose rc [RC NAME] --name=[SVC NAME] --target-port=[PORT NUMBER] --type=NodePort
+```
+### Create
+```
+kubectl create -f [FILENAME].yaml
+```
 ### Get
 ```
-kubectl get rs
+kubectl get svc
 ```
 ### Info
 ```
-kubectl describe rs
+kubectl describe svc [SVC NAME]
+```
+### Delete
+```
+kubectl delete svc [SVC NAME]
+```
+### Watch
+```
+kubectl get service [SVC NAME] --watch
+```
+
+## Pod
+### Create
+```
+kubectl create -f [FILE NAME].yaml
+```
+### Get all
+```
+kubectl get pods
+```
+### Info
+```
+kubectl describe pods
+```
+### Logs
+```
+kubectl logs [POD NAME] -n [NAMESPACE]
+```
+### Exec
+```
+kubectl exec -it [POD NAME] -n [NAMESPACE] /bin/bash
+```
+### Delete
+```
+kubectl delete pods [POD NAME]
 ```
 
 ## Ingress
@@ -136,12 +118,34 @@ kubectl describe ingress [INGRESS NAME] -n [NAMESPACE NAME]
 kubectl delete ingress [INGRESS NAME] -n [NAMESPACE NAME]
 ```
 
-## Namespace
-### Get all resources per namespace
+## Replication Controller
+### Create
 ```
-kubectl get all -n [NAMESPACE]
+kubectl create -f [FILE NAME].yaml
 ```
-### Delete all resources
+### Update
 ```
-kubectl delete namespace -n [NAMESPACE] --all
+kubectl apply -f [FILE NAME].yaml
+```
+### Get
+```
+kubectl get rc
+```
+### Info
+```
+kubectl describe rc [RC NAME]
+```
+### Delete
+```
+kubectl delete rc [RC NAME]
+```
+
+## Replica Sets
+### Get
+```
+kubectl get rs
+```
+### Info
+```
+kubectl describe rs
 ```
