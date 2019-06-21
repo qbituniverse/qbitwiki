@@ -103,6 +103,10 @@ kubectl get deploy
 ```
 kubectl describe deploy [DEPLOYMENT NAME]
 ```
+### Logs
+```
+kubectl logs -f deploy/[DEPLOYMENT NAME] -n [NAMESPACE]
+```
 ### Delete
 ```
 kubectl delete deploy [DEPLOYMENT NAME]
