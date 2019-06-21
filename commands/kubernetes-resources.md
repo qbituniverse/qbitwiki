@@ -9,9 +9,13 @@ kubectl get namespaces
 ```
 kubectl get all -n [NAMESPACE]
 ```
+### Delete namespace
+```
+kubectl delete namespace [NAMESPACE]
+```
 ### Delete all resources
 ```
-kubectl delete namespace -n [NAMESPACE] --all
+kubectl delete namespace --all
 ```
 
 ## Deployments
