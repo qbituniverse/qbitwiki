@@ -30,6 +30,10 @@ az aks browse --resource-group [RESOURCE GROUP NAME] --name [CLUSTER NAME]
 ```
 
 ## Context
+### View kube config
+```
+kubectl config view
+```
 ### Get all
 ```
 kubectl config get-contexts
