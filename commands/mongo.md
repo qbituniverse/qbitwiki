@@ -39,3 +39,7 @@ db.[COLLECTION NAME].find()
 ```
 db.[COLLECTION NAME].find().pretty()
 ```
+### Get users on admin table
+```
+db.getUsers()
+```
