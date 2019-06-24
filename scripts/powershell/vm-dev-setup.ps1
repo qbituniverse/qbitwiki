@@ -13,6 +13,7 @@ choco feature enable -n allowGlobalConfirmation
 choco install docker-for-windows
 choco install docker-compose
 choco install googlechrome --ignore-checksum
+choco install firefox
 choco install postman
 choco install sourcetree
 choco install git.install
