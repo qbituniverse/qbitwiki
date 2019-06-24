@@ -28,6 +28,14 @@ az aks get-credentials --resource-group [RESOURCE GROUP NAME] --name [CLUSTER NA
 ```
 az aks browse --resource-group [RESOURCE GROUP NAME] --name [CLUSTER NAME]
 ```
+### Cluster Info
+```
+kubectl cluster-info
+```
+### Api versions
+```
+kubectl api-versions
+```
 
 ## Context
 ### View kube config
