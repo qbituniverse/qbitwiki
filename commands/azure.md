@@ -27,3 +27,41 @@ az aks get-credentials --resource-group [RESOURCE GROUP NAME] --name [CLUSTER NA
 ```
 az aks browse --resource-group [RESOURCE GROUP NAME] --name [CLUSTER NAME]
 ```
+
+## Container Registry
+### List ACRs
+```
+az acr list
+```
+### Set default ACR
+```
+az configure --defaults acr=[ACR NAME]
+```
+### List Specific ACR
+```
+az acr helm list -n [ACR NAME]
+```
+### Chart Details from ACR
+```
+az acr helm show [CHART NAME] -n [ACR NAME]
+```
+### Inspect chart in ACR
+```
+az acr helm inspect [ACR NAME/CHART NAME]
+```
+### Add ACR repo to local Helm
+```
+az acr helm repo add -n [ACR NAME]
+```
+### Refresh
+```
+az acr helm repo add
+```
+### Push chart to ACR
+```
+az acr helm push [CHART NAME]
+```
+### Ddelete chart from ACR
+```
+az acr helm delete [CHART NAME] --version [CHART VERSION]
+```
