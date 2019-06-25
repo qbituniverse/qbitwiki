@@ -17,3 +17,13 @@ az account show
 ```
 az account set --subscription [SUBSCRIPTION NAME] or [GUID ID]
 ```
+
+## Kubernetes Cluster
+### Access to cluster
+```
+az aks get-credentials --resource-group [RESOURCE GROUP NAME] --name [CLUSTER NAME]
+```
+### Browse cluster
+```
+az aks browse --resource-group [RESOURCE GROUP NAME] --name [CLUSTER NAME]
+```
