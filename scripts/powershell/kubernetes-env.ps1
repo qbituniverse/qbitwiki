@@ -23,14 +23,7 @@ If ($Operation -in "--help") {
 }
 
 If ($Operation -in ("--view", "--view-wide", "")) {
-	Write-Host -ForegroundColor Green "=========================================================="
-	Write-Host -ForegroundColor Green "Current Azure Subscription"
-	Write-Host -ForegroundColor Green "=========================================================="
-	
-	az account show --query "name" --output tsv
-	
-	Write-Host ""
-    Write-Host -ForegroundColor Green "=========================================================="
+    	Write-Host -ForegroundColor Green "=========================================================="
 	Write-Host -ForegroundColor Green "Current Context"
 	Write-Host -ForegroundColor Green "=========================================================="
 	
