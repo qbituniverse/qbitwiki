@@ -1,5 +1,5 @@
-# Shortcuts
-## Terminal
+# Visual Studio Code
+## Shortcuts
 ### Run Selected Text in Active Terminal
 ```
 workbench.action.terminal.runSelectedText
