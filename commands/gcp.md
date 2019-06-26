@@ -22,3 +22,9 @@ gcloud container clusters describe [CLUSTER NAME] --zone [ZONE]
 ```
 gcloud container clusters get-credentials [CLUSTER NAME] --zone [ZONE]
 ```
+
+## Image Registries
+### DockerHub Credentials store in Secret
+```
+kubectl create secret docker-registry regcred --docker-server=[REGISTRY SERVER] --docker-username=[USERNAME] --docker-password=[PASSWORD] --docker-email=[EMAIL]
+```
