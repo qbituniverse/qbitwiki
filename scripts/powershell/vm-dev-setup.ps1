@@ -25,6 +25,7 @@ choco install kubernetes-cli
 choco install kubernetes-helm
 choco install gcloudsdk
 choco install openssl.light
+choco install grep
 
 # reboot
 Restart-Computer
