@@ -107,6 +107,10 @@ kubectl exec -it [POD NAME] -n [NAMESPACE] /bin/bash
 ```
 kubectl delete pods [POD NAME]
 ```
+### View Config/Environment Variables
+```
+printenv
+```
 
 ## Ingress
 ### Get
