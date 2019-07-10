@@ -12,19 +12,22 @@ All resources in **QbitWiki** are free, public and constantly updated with new c
 
 -   [Azure](https://github.com/qbituniverse/qbitwiki/blob/master/commands/azure.md)
 -   [Docker](https://github.com/qbituniverse/qbitwiki/blob/master/commands/docker.md)
+-   [GCP](https://github.com/qbituniverse/qbitwiki/blob/master/commands/gcp.md)
 -   [Helm](https://github.com/qbituniverse/qbitwiki/blob/master/commands/helm.md)
--   [Kubernetes](https://github.com/qbituniverse/qbitwiki/blob/master/commands/kubernetes.md)
 -   [Kubernetes Cluster](https://github.com/qbituniverse/qbitwiki/blob/master/commands/kubernetes-cluster.md)
+-   [Kubernetes Workloads](https://github.com/qbituniverse/qbitwiki/blob/master/commands/kubernetes-workloads.md)
 -   [Mongo](https://github.com/qbituniverse/qbitwiki/blob/master/commands/mongo.md)
+-   [Powershell](https://github.com/qbituniverse/qbitwiki/blob/master/commands/powershell.md)
+-   [VS Code](https://github.com/qbituniverse/qbitwiki/blob/master/commands/vs-code.md)
 
 ## Scripts
 
+-   [Bash](https://github.com/qbituniverse/qbitwiki/tree/master/scripts/bash)
 -   [Powershell](https://github.com/qbituniverse/qbitwiki/tree/master/scripts/powershell)
 
 ## Templates
 
--   [ARM Static Lookups](https://github.com/qbituniverse/qbitwiki/blob/master/templates/arm/static-lookups.md)
--   [ARM JSON Templates](https://github.com/qbituniverse/qbitwiki/tree/master/templates/arm)
+-   [Azure](https://github.com/qbituniverse/qbitwiki/blob/master/templates/azure)
 
 ## Deployment
 
