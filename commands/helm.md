@@ -35,6 +35,10 @@ helm upgrade --install --recreate-pods --reset-values --force --values [VALUES F
 ```
 helm delete --purge [RELEASE NAME]
 ```
+### Delete All
+```
+helm ls --all --short | xargs -L1 helm delete --purge
+```
 ### History
 ```
 helm history [RELEASE NAME]
