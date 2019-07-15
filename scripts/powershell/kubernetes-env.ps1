@@ -31,6 +31,18 @@ If ($Operation -in ("--view", "--view-wide", "")) {
 	
 	Write-Host ""
 	Write-Host -ForegroundColor Green "=========================================================="
+	Write-Host -ForegroundColor Green "Nodes"
+	Write-Host -ForegroundColor Green "=========================================================="
+	
+	If ($Operation -in ("--view", "")) {
+		kubectl get nodes
+	} ElseIf ($Operation -eq "--view-wide") {
+		kubectl get nodes -o wide
+	}
+	kubectl top nodes
+	
+	Write-Host ""
+	Write-Host -ForegroundColor Green "=========================================================="
 	Write-Host -ForegroundColor Green "Namespaces"
 	Write-Host -ForegroundColor Green "=========================================================="
 	
