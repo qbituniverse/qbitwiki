@@ -111,6 +111,10 @@ kubectl delete pods [POD NAME]
 ```
 printenv
 ```
+### View Memory/Cpu Usage
+```
+kubectl top pod --all-namespaces
+```
 
 ## Ingress
 ### Get
