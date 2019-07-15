@@ -1,5 +1,16 @@
 # Kubernetes Admin
 
+## Nodes
+
+### View Memory/Cpu Usage
+```
+kubectl get nodes --no-headers | awk '{print $1}' | xargs -I {} sh -c 'echo {}; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo'
+```
+### View Memory/Cpu Top Nodes
+```
+kubectl top nodes
+```
+
 ## Authentication
 
 ### Seccret
