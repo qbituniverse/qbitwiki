@@ -39,6 +39,7 @@ If ($Operation -in ("--view", "--view-wide", "")) {
 	} ElseIf ($Operation -eq "--view-wide") {
 		kubectl get nodes -o wide
 	}
+	Write-Host ""
 	kubectl top nodes
 	
 	Write-Host ""
