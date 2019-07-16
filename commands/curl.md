@@ -2,9 +2,13 @@
 ## loop
 ### for each
 ```
-for ((i=1;i<=100;i++)); do curl "http://URL"; done;
+for ((i=1;i<=100;i++)); do curl -k "http://URL"; done;
 ```
-### infinite
+### infinite (curl)
 ```
-while true; do curl "http://URL"; done;
+while true; do curl -k "http://URL"; done;
+```
+### infinite (busybox)
+```
+while true; do wget -q -O- http://URL; done
 ```
