@@ -63,6 +63,10 @@ kubectl run curl --image=[IMAGE NAME]:curl -i --tty
 ```
 kubectl run curl -i --tty
 ```
+### Busybox
+```
+kubectl run -i --tty bb-1 --image=busybox /bin/sh
+```
 ### Wide output
 ```
 kubectl get pods|svc|etc -o wide
