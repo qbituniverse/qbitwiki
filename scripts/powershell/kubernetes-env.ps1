@@ -150,6 +150,17 @@ If ($Operation -in ("--view", "--view-wide", "")) {
 	
 	Write-Host ""
 	Write-Host -ForegroundColor Green "=========================================================="
+	Write-Host -ForegroundColor Green "Horizontal Pod Autoscalers"
+	Write-Host -ForegroundColor Green "=========================================================="
+	
+	If ($Operation -in ("--view", "")) {
+		kubectl get hpa --all-namespaces
+	} ElseIf ($Operation -eq "--view-wide") {
+		kubectl get hpa --all-namespaces -o wide
+	}
+	
+	Write-Host ""
+	Write-Host -ForegroundColor Green "=========================================================="
 	Write-Host -ForegroundColor Green "Persistent Volume Claims"
 	Write-Host -ForegroundColor Green "=========================================================="
 	
