@@ -75,3 +75,9 @@ kubectl get pods|svc|etc -o wide
 ```
 kubectl get pods|svc|etc -o yaml
 ```
+
+## Access
+### Port Forwarding
+```
+kubectl port-forward [POD NAME] [LOCALHOST PORT]:[POD PORT] -n [NAMESPACE]
+```
