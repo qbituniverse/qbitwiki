@@ -38,6 +38,6 @@ If ($Operation -in ("--view", "")) {
 } Else {
 	Write-Host -ForegroundColor Red "=========================================================="
 	Write-Host -ForegroundColor Red "Wrong Operation Received"
-	Write-Host -ForegroundColor Red "Use: --view | --init"
+	Write-Host -ForegroundColor Red "Use: --view"
 	Write-Host -ForegroundColor Red "=========================================================="
 }
