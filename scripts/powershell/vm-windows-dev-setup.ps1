@@ -26,6 +26,7 @@ choco install kubernetes-helm
 choco install gcloudsdk
 choco install openssl.light
 choco install grep
+choco install golang
 
 # reboot
 Restart-Computer
