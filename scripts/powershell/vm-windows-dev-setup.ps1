@@ -1,3 +1,6 @@
+# allow ICMP ping IPv4
+netsh advfirewall firewall add rule name="ICMP Allow incoming V4 echo request" protocol=icmpv4:8,any dir=in action=allow
+
 # clean up Docker
 Uninstall-Package -Name docker -ProviderName DockerMsftProvider
 Uninstall-Module -Name DockerMsftProvider
