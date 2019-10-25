@@ -124,8 +124,8 @@ If ($Operation -in ("--view", "")) {
 	Write-Host -ForegroundColor Red "Removing All Images"
 	Write-Host -ForegroundColor Red "=========================================================="
 	
-	docker rmi $(docker images -qf dangling=true)
-	docker rmi $(docker images -q)
+	docker rmi -f $(docker images -qf dangling=true)
+	docker rmi -f $(docker images -q)
 	docker image prune -af
 
 	Write-Host -ForegroundColor Red "=========================================================="
