@@ -25,6 +25,7 @@ choco install vscode
 choco install azure-cli
 az extension add --name mesh
 choco install kubernetes-cli
+choco install minikube
 choco install kubernetes-helm
 choco install gcloudsdk
 choco install openssl.light
