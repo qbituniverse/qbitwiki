@@ -13,7 +13,7 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://cho
 choco feature enable -n allowGlobalConfirmation
 
 # install dependencies
-choco install docker-for-windows
+choco install docker-desktop
 choco install docker-compose
 choco install googlechrome --ignore-checksum
 choco install firefox
