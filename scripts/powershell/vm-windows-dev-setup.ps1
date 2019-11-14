@@ -24,6 +24,7 @@ choco install git-lfs.install
 choco install vscode
 choco install azure-cli
 az extension add --name mesh
+az extension add --name aks-preview
 choco install kubernetes-cli
 choco install minikube
 choco install kubernetes-helm
