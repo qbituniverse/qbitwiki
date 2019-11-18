@@ -33,6 +33,7 @@ choco install openssl.light
 choco install grep
 choco install golang
 choco install nuget.commandline
+choco install gcloudsdk
 
 # reboot
 Restart-Computer
