@@ -161,6 +161,28 @@ If ($Operation -in ("--view", "--view-wide", "")) {
 	
 	Write-Host ""
 	Write-Host -ForegroundColor Green "=========================================================="
+	Write-Host -ForegroundColor Green "Storage Classes"
+	Write-Host -ForegroundColor Green "=========================================================="
+	
+	If ($Operation -in ("--view", "")) {
+		kubectl get storageclass --all-namespaces
+	} ElseIf ($Operation -eq "--view-wide") {
+		kubectl get storageclass --all-namespaces -o wide
+	}
+	
+	Write-Host ""
+	Write-Host -ForegroundColor Green "=========================================================="
+	Write-Host -ForegroundColor Green "Persistent Volumes"
+	Write-Host -ForegroundColor Green "=========================================================="
+	
+	If ($Operation -in ("--view", "")) {
+		kubectl get pv --all-namespaces
+	} ElseIf ($Operation -eq "--view-wide") {
+		kubectl get pv --all-namespaces -o wide
+	}
+	
+	Write-Host ""
+	Write-Host -ForegroundColor Green "=========================================================="
 	Write-Host -ForegroundColor Green "Persistent Volume Claims"
 	Write-Host -ForegroundColor Green "=========================================================="
 	
@@ -182,7 +204,6 @@ If ($Operation -in ("--view", "--view-wide", "")) {
 	}
 	
 	Write-Host ""
-	
 	Write-Host -ForegroundColor Green "=========================================================="
 	Write-Host -ForegroundColor Green "Secrets"
 	Write-Host -ForegroundColor Green "=========================================================="
