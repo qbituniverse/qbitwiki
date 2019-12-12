@@ -12,7 +12,7 @@ If ($Operation -in "--help") {
 	Write-Host -ForegroundColor Green "	[operation]"
 	Write-Host -ForegroundColor Green ""
 	Write-Host -ForegroundColor Green "	--proxy			Set proxy bypass"
-  Write-Host -ForegroundColor Green "	--docker-c		Allow C drive share"
+  	Write-Host -ForegroundColor Green "	--docker-c		Allow C drive share"
 	Write-Host -ForegroundColor Green ""
 	Write-Host -ForegroundColor Green ""
 	Write-Host -ForegroundColor Green "Usage:"
