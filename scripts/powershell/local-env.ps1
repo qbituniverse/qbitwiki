@@ -26,9 +26,9 @@ If ($Operation -eq "--proxy") {
 	Write-Host -ForegroundColor Green "Setting Proxy Bypass"
 	Write-Host -ForegroundColor Green "=========================================================="
 	
-    $Wcl = new-object System.Net.WebClient
-    $Wcl.Headers.Add("user-agent", "PowerShell Script")
-    $Wcl.Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
+    	$Wcl = new-object System.Net.WebClient
+    	$Wcl.Headers.Add("user-agent", "PowerShell Script")
+    	$Wcl.Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
 
 	Write-Host ""
 } ElseIf ($Operation -eq "--docker-c") {
