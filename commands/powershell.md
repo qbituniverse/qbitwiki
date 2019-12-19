@@ -17,3 +17,13 @@ netsh advfirewall firewall add rule name="ICMP Allow incoming V4 echo request" p
 ```
 netsh advfirewall firewall add rule name="Open Port 80" dir=in action=allow protocol=TCP localport=80
 ```
+## TLS
+### Bypass TLS validation on Web Client request
+```
+$AllProtocols = [System.Net.SecurityProtocolType]'Ssl3,Tls,Tls11,Tls12'
+[System.Net.ServicePointManager]::SecurityProtocol = $AllProtocols
+[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
+
+$wc = New-Object System.Net.WebClient
+$wc.DownloadString("https://...")
+```
