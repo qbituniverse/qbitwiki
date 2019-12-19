@@ -18,7 +18,7 @@ netsh advfirewall firewall add rule name="ICMP Allow incoming V4 echo request" p
 netsh advfirewall firewall add rule name="Open Port 80" dir=in action=allow protocol=TCP localport=80
 ```
 ## TLS
-### Bypass TLS validation on Web Client request
+### Bypass TLS validation during Web Client call
 ```
 $AllProtocols = [System.Net.SecurityProtocolType]'Ssl3,Tls,Tls11,Tls12'
 [System.Net.ServicePointManager]::SecurityProtocol = $AllProtocols
@@ -26,4 +26,11 @@ $AllProtocols = [System.Net.SecurityProtocolType]'Ssl3,Tls,Tls11,Tls12'
 
 $wc = New-Object System.Net.WebClient
 $wc.DownloadString("https://...")
+```
+## Proxy
+### Bypass Proxy during Web Client call
+```
+$wc = new-object System.Net.WebClient
+$wc.Headers.Add("user-agent", "PowerShell Script")
+$wc.Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
 ```
