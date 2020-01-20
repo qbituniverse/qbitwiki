@@ -35,6 +35,7 @@ choco install golang
 choco install nuget.commandline
 choco install gcloudsdk
 choco install tartool
+choco install sed
 
 # reboot
 Restart-Computer
