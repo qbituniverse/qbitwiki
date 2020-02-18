@@ -49,6 +49,10 @@ docker network connect [NETWORK NAME] [CONTAINER NAME]
 ```
 docker network disconnect [NETWORK NAME] [CONTAINER NAME]
 ```
+### Remove
+```
+docker network rm [NETWORK NAME]
+```
 ## Build
 ### Build (from Dockerfile in root context)
 ```
