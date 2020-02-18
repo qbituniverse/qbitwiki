@@ -28,6 +28,27 @@ docker login [REPO NAME] -u [UN] -p [PW]
 ```
 docker logout [REPO NAME]
 ```
+## Network
+### List
+```
+docker network list
+```
+### Create
+```
+docker network create [NETWORK NAME]
+```
+### Inspect
+```
+docker network inspect [NETWORK NAME]
+```
+### Connect Container
+```
+docker network connect [NETWORK NAME] [CONTAINER NAME]
+```
+### Disconnect Container
+```
+docker network disconnect [NETWORK NAME] [CONTAINER NAME]
+```
 ## Build
 ### Build (from Dockerfile in root context)
 ```
