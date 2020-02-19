@@ -13,7 +13,7 @@ kubectl top nodes
 
 ## Authentication
 
-### Seccret
+### Secret
 ```
 kubectl create secret docker-registry k8s-auth --docker-server [REPO NAME] --docker-username [USER NAME] --docker-password [PASS WORD] --docker-email sample@sample.com
 ```
