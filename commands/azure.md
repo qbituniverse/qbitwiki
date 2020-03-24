@@ -27,6 +27,10 @@ az aks get-credentials --resource-group [RESOURCE GROUP NAME] --name [CLUSTER NA
 ```
 az aks browse --resource-group [RESOURCE GROUP NAME] --name [CLUSTER NAME]
 ```
+### Cluster version upgrades
+```
+az aks get-versions --output table --location [LOCATION]
+```
 
 ## Container Registry
 ### List ACRs
