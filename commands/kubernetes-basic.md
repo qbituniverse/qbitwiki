@@ -29,6 +29,10 @@ az aks browse --resource-group [RG] --name [CLUSTER]
 ```
 helm init
 ```
+## Upgrade to latest version
+```
+choco upgrade kubernetes-helm
+```
 ### Run this if cluser was created by different principal
 ```
 kubectl create serviceaccount --namespace kube-system tiller
