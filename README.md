@@ -1,6 +1,6 @@
 # QbitWiki
 
-**QbitWiki** is available on: [GitHub](https://github.com/qbituniverse/qbitwiki) - [DockerHub](https://cloud.docker.com/u/qbituniverse/repository/docker/qbituniverse/qbitwiki) - [Web](http://qbituniverse.com)
+**QbitWiki** is available on: [GitHub](https://github.com/qbituniverse/qbitwiki) - [DockerHub](https://cloud.docker.com/u/qbituniverse/repository/docker/qbituniverse/qbitwiki) - [Web](https://qbituniverse.com)
 
 ## Description
 
@@ -68,4 +68,4 @@ The above will print out Docker system output, Images, Containers, Volumes and a
 
 ## Links
 
-**QbitWiki** is available on: [GitHub](https://github.com/qbituniverse/qbitwiki) - [DockerHub](https://cloud.docker.com/u/qbituniverse/repository/docker/qbituniverse/qbitwiki) - [Web](http://qbituniverse.com)
+**QbitWiki** is available on: [GitHub](https://github.com/qbituniverse/qbitwiki) - [DockerHub](https://cloud.docker.com/u/qbituniverse/repository/docker/qbituniverse/qbitwiki) - [Web](https://qbituniverse.com)
