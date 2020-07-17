@@ -12,6 +12,6 @@ steps:
   inputs:
     containerRegistry: DockerHub
     repository: qbituniverse/qbitwiki
-    Dockerfile: 'automation/docker/Dockerfile-qbitwiki'
+    Dockerfile: '.cicd/docker/Dockerfile-qbitwiki'
     buildContext: ''
     tags: latest
