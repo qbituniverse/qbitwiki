@@ -1,4 +1,4 @@
-FROM    scratch
+FROM    alpine:latest
 LABEL   description="Image containing set of qbitwiki files" \
         maintainer="marcin.narloch@qbituniverse.com"
 
