@@ -1,8 +1,11 @@
 [CmdletBinding()]
 Param
 (
-	[Parameter(Position=0,Mandatory=$false,HelpMessage="Operation: --view | --view-wide | --reset")]
-	[string]$Operation
+	[Parameter(Position=0,Mandatory=$false,HelpMessage="Operation: --view | --view-wide | --context | --reset")]
+	[string]$Operation,
+	
+	[Parameter(Position=1,Mandatory=$false,HelpMessage="Context")]
+    	[string]$Context
 )
 
 If ($Operation -in "--help") {
@@ -13,17 +16,28 @@ If ($Operation -in "--help") {
 	Write-Host -ForegroundColor Green ""
 	Write-Host -ForegroundColor Green "	--view			View all k8s resources: all contexts, all namespaces, all deployments, all replica sets, all services, all pods, all config maps."
 	Write-Host -ForegroundColor Green "	--view-wide		View all k8s resources in wide view: all contexts, all namespaces, all deployments, all replica sets, all services, all pods, all config maps."
+	Write-Host -ForegroundColor Green "	--context		Switches current context."
 	Write-Host -ForegroundColor Green "	--reset			Resets k8s cache by deleteing config file."
 	Write-Host -ForegroundColor Green ""
 	Write-Host -ForegroundColor Green ""
 	Write-Host -ForegroundColor Green "Usage:"
+	Write-Host -ForegroundColor Green ""
+	Write-Host -ForegroundColor Green "Run view within current context:"
+	Write-Host -ForegroundColor Green "				kubectl-env.ps1"
+	Write-Host -ForegroundColor Green ""
+	Write-Host -ForegroundColor Green ""
+	Write-Host -ForegroundColor Green "Run specific operation:"
 	Write-Host -ForegroundColor Green "				kubectl-env.ps1 [operation]"
+	Write-Host -ForegroundColor Green ""
+	Write-Host -ForegroundColor Green ""
+	Write-Host -ForegroundColor Green "Run operation to switch context:"
+	Write-Host -ForegroundColor Green "				kubectl-env.ps1 --context [context name]"
 	Write-Host -ForegroundColor Green ""
 	Exit
 }
 
 If ($Operation -in ("--view", "--view-wide", "")) {
-    	Write-Host -ForegroundColor Green "=========================================================="
+    Write-Host -ForegroundColor Green "=========================================================="
 	Write-Host -ForegroundColor Green "Current Context"
 	Write-Host -ForegroundColor Green "=========================================================="
 	
@@ -215,6 +229,14 @@ If ($Operation -in ("--view", "--view-wide", "")) {
 	}
 	
 	Write-Host ""
+} ElseIf ($Operation -eq "--context") {
+	Write-Host -ForegroundColor Blue "=========================================================="
+	Write-Host -ForegroundColor Blue "Setting k8s Context"
+	Write-Host -ForegroundColor Blue "=========================================================="
+	
+	kubectl config use-context $Context
+
+	Write-Host ""
 } ElseIf ($Operation -eq "--reset") {
 	Write-Host -ForegroundColor Red "=========================================================="
 	Write-Host -ForegroundColor Red "Resetting k8s Cluster Cache"
@@ -226,6 +248,6 @@ If ($Operation -in ("--view", "--view-wide", "")) {
 } Else {
 	Write-Host -ForegroundColor Red "=========================================================="
 	Write-Host -ForegroundColor Red "Wrong Operation Received"
-	Write-Host -ForegroundColor Red "Use: --view | --view-wide | --reset"
+	Write-Host -ForegroundColor Red "Use: --view | --view-wide | --context | --reset"
 	Write-Host -ForegroundColor Red "=========================================================="
 }
