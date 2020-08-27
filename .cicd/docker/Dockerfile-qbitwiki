@@ -1,7 +1,0 @@
-FROM    busybox:latest
-LABEL   description="Image containing set of qbitwiki files" \
-        maintainer="marcin.narloch@qbituniverse.com"
-
-COPY    commands /qbitwiki/commands
-COPY    scripts /qbitwiki/scripts
-COPY    templates /qbitwiki/templates
